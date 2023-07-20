@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.header {
+  height: 64px;
+  background: rgb(51, 53, 69);
+  padding: 0px;
+  box-shadow: none;
+}
+
+.item-left {
+  display: flex;
+  padding-left: 69px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.navigation-bar {
+  height: 40px;
+  width: 100%;
+  background: rgb(34, 37, 57);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.navigation-options {
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 400;
+  color: rgb(204, 204, 204);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}

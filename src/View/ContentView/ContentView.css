@@ -1,0 +1,39 @@
+.view {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  background-color: #0000;
+}
+
+.left-view-container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-right: 30px;
+  color: #333333;
+}
+.right-view-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  padding-bottom: 80px;
+  max-width: unset;
+  margin-top: 5px;
+}
+
+@media (min-width: 800px) {
+  .view {
+    flex-direction: row;
+    margin-top: 64px;
+    width: 92vw;
+    max-width: 1240px;
+  }
+  .left-view-container {
+    width: calc(65vw - 330px);
+    max-width: calc(910px);
+    padding-bottom: 0px;
+  }
+  .right-view-container {
+    margin-top: 0px;
+  }
+}
