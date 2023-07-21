@@ -1,12 +1,21 @@
+//when : wrapper api function utilized by dashboard component to fetch data
+//does : returns response if promises resolve or error if it fails
 
-  //when : wrapper api function utilzed by dashboard component to fetch data
-  //does : wrapper async/await promises callback function
-  
-export const apiWrapper = async (type, ) => {
+export const fetchApiWrapper = async (baseURL, params = "", query = "") => {
+  let entityURL = baseURL
+    ? baseURL
+    : "https://in.bmscdn.com/m6/static/interview-mock";
+  if (entityURL) {
+    if (params.length) {
+      entityURL += "/" + params.trim();
+    }
+    if (query.length) {
+      entityURL += "?" + query.trim();
+    }
+  }
+
   try {
-    const response = await fetch(
-      "https://in.bmscdn.com/m6/static/interview-mock/data.json"
-    );
+    const response = await fetch(entityURL);
     const data = await response.json();
 
     return data;
@@ -15,10 +24,16 @@ export const apiWrapper = async (type, ) => {
   }
 };
 
-export const sanitizeURL = (url) => {
+//when : wrapper function utilized by video component to sanitize youtube url
+//does : returns url that is compatible for playing in embeded view.
+export const sanitizeURL = (
+  url = "",
+  existingString = "",
+  replaceString = ""
+) => {
   let tempURL = url;
-  if (tempURL?.includes("watch?v=")) {
-    let modUrl = tempURL?.replace("watch?v=", "embed/");
+  if (tempURL?.includes(existingString)) {
+    let modUrl = tempURL?.replace(existingString, replaceString);
     return modUrl;
   } else return tempURL;
 };

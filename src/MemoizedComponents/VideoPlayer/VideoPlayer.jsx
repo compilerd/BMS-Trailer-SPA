@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { sanitizeURL } from "../../View/utils";
+import Constants from "../../View/constants";
 
 const VideoPlayer = ({ URL, id }) => {
   const [modifiedUrl, setModifiedURL] = useState("");
@@ -8,7 +9,11 @@ const VideoPlayer = ({ URL, id }) => {
   //does : returns modified url to play embeded video on spa, as original url aren't supported
   useEffect(() => {
     if (URL?.length) {
-      let modURL = sanitizeURL(URL);
+      let modURL = sanitizeURL(
+        URL,
+        Constants.videoCompCompareAndReplace.existingString,
+        Constants.videoCompCompareAndReplace.replaceString
+      );
       setModifiedURL(modURL);
     }
   }, [URL]);
