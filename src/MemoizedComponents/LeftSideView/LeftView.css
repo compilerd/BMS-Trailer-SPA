@@ -6,7 +6,7 @@
 
 .left-view-title {
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
   background-color: transparent;
   min-height: initial;
   text-align: center;
@@ -58,5 +58,6 @@
   }
   .left-view-title {
     text-align: left;
+    margin-bottom: 24px;
   }
 }

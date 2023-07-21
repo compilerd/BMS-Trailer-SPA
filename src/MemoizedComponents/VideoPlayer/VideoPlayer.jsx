@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { sanitizeURL } from "../../View/utils";
-import Constants from "../../View/constants";
+import { sanitizeURL } from "../../Common/Utils";
+import Constants from "../../Common/Constants";
 
 const VideoPlayer = ({ URL, id }) => {
   const [modifiedUrl, setModifiedURL] = useState("");

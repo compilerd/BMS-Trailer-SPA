@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { fetchApiWrapper } from "./utils";
+import { fetchApiWrapper } from "../Common/Utils";
 import "./dashboard.css";
 import Header from "./Header/Header";
-import ContentView from "./ContentView/ContentView";
-import Constants from "./constants";
+import ContentView from "../MemoizedComponents/ContentView/ContentView";
+import Constants from "../Common/Constants";
 
 const Dashboard = () => {
   const [languageList, setLanguageList] = useState([]);
